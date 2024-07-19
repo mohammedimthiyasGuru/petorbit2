@@ -1,0 +1,7 @@
+{
+  "name": "petorbits",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
