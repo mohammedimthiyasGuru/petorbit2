@@ -1,12 +1,6 @@
 <ion-app>
-  <ion-split-pane contentId="main-content" *ngIf="!loading_status">
+   <ion-split-pane contentId="main-content">
     <app-sidemenu></app-sidemenu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
-
-  <ion-content  *ngIf="loading_status">
-    <div class="centered-content">
-      <img src="../assets/appimage/loading.gif" alt="Loading" />
-    </div>
-  </ion-content>
 </ion-app>

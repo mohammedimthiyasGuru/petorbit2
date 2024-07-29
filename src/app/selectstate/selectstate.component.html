@@ -1,3 +1,35 @@
-<p>
-  selectstate works!
-</p>
+<div class="container">
+  
+  <div class="scrollable-div">  
+ <header>
+  <div class="gradient">
+  <div class="location-container">  
+    <i class="fas fa-arrow-left" style="font-size: 24px;"></i>
+    <h1 class="label1">Location</h1>
+    <div class="label2">Select your current State</div>
+    <div class="label3">We require your current state to display ads and pet information near your location.</div>
+    <!-- <div class="input-container">
+        <input type="text" placeholder="Find your country...">
+        <i class="fas fa-search"></i>
+    </div> -->
+    <!-- <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar> -->
+</div>
+</div>
+</header>
+    <div class="categories">
+      <div class="category" *ngFor="let category of categories" (click)="selectCategory(category)" [ngClass]="{'selected': category.selected}">
+        <div class="card">
+          <img src={{category.iconClass}} alt="img" class="background-image">
+          <div class="gradient">
+              <div class="label">{{category.name}}</div>
+          </div>
+        </div>
+        <div class="check-icon" *ngIf="category.selected"><img src="../../assets/appimage/dog.png"></div>
+      </div>
+      <br>
+      <br>
+    </div>
+    </div>
+    <button class="floating-button" (click)="next_city()">Next 1/6</button>
+</div>
+  

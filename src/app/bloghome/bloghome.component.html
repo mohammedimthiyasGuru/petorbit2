@@ -1,3 +1,177 @@
-<p>
-  bloghome works!
-</p>
+<div class="container">
+  <!-- Header -->
+
+  <div class="scrollable-div">
+   
+  <div style="display: flex;flex-wrap: nowrap;">
+    <div style="width: 15%;">menu
+    </div>
+    <div style="width: 65%;"> </div>
+     blank
+    <div style="width: 20%;">
+     Set pro
+    </div>
+  </div>
+
+  <div class="title">Your Daily</div>
+  <!-- Title -->
+  <div class="title2">Recommendation</div>
+  <br>
+  <!-- Main Content -->
+  <div class="">
+      <!-- Article 1 -->
+      <div class="scroll-container">
+        <div class="item" *ngFor="let category of categories">
+          <div class="card" (click)="moveto()">
+            <img src="../../assets/states/Delhi.webp" alt="img" class="background-image">
+            <div class="gradient">
+                <div class="card_title">New product with 50% Apple Super</div>
+                <div class="card_title2"> 
+                  <div><img style="width: 20px; height: 20px;" src="../../assets/appimage/dog.png"></div>  
+                  <div style="margin-left: 4px;"> Mohammed Imthiyas</div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+       
+      <!-- <div class="scrollable-div">
+      
+      <div class="category" *ngFor="let category of categories">
+        <div class="card">
+          <img src={{category.iconClass}} alt="img" class="background-image">
+          <div class="gradient">
+              <div class="card_title">New product with 50% Apple Super</div>
+              <div class="card_title2"> 
+                <div><img style="width: 20px; height: 20px;" src="../../assets/appimage/dog.png"></div>  
+                <div style="margin-left: 4px;"> Mohammed Imthiyas</div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+  </div>
+
+  <!-- Tabs -->
+  <!-- <div class="tabs">
+      <a class="active">Top</a>
+      <a href="#">Popular</a>
+      <a href="#">Trending</a>
+      <a href="#">Editor</a>
+  </div> -->
+
+  <div class="tabs">
+    <a 
+       (click)="setActiveTab('top')" 
+       [class.active]="activeTab === 'top'">Top</a>
+    <a 
+       (click)="setActiveTab('popular')" 
+       [class.active]="activeTab === 'popular'">Popular</a>
+    <a 
+       (click)="setActiveTab('trending')" 
+       [class.active]="activeTab === 'trending'">Trending</a>
+    <a 
+       (click)="setActiveTab('editor')" 
+       [class.active]="activeTab === 'editor'">Editor</a>
+</div>
+
+  <!-- List Items -->
+  <div class="list">
+      <div class="list-item">
+          <img src="https://via.placeholder.com/50" alt="Item Image">
+          <div>
+              <h3>Inspiration for New Projects Can Be Found</h3>
+              <p>by Christina · 10 min</p>
+          </div>
+      </div>
+      <div class="list-item">
+          <img src="https://via.placeholder.com/50" alt="Item Image">
+          <div>
+              <h3>Inspiration for New Projects Can Be Found</h3>
+              <p>by Christina · 10 min</p>
+          </div>
+      </div>
+      <div class="list-item">
+        <img src="https://via.placeholder.com/50" alt="Item Image">
+        <div>
+            <h3>Inspiration for New Projects Can Be Found</h3>
+            <p>by Christina · 10 min</p>
+        </div>
+    </div>
+    <div class="list-item">
+      <img src="https://via.placeholder.com/50" alt="Item Image">
+      <div>
+          <h3>Inspiration for New Projects Can Be Found</h3>
+          <p>by Christina · 10 min</p>
+      </div>
+  </div>
+  <div class="list-item">
+    <img src="https://via.placeholder.com/50" alt="Item Image">
+    <div>
+        <h3>Inspiration for New Projects Can Be Found</h3>
+        <p>by Christina · 10 min</p>
+    </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+<div class="list-item">
+  <img src="https://via.placeholder.com/50" alt="Item Image">
+  <div>
+      <h3>Inspiration for New Projects Can Be Found</h3>
+      <p>by Christina · 10 min</p>
+  </div>
+</div>
+  </div>
+  <div class="categories2">
+    <div class="category2" *ngFor="let category of categories">
+      <div class="card2">
+        <img src={{category.iconClass}} alt="img" class="background-image">
+        <div class="gradient">
+            <div class="label">{{category.name}}</div>
+        </div>
+      </div>
+      <div class="check-icon" *ngIf="category.selected"><img src="../../assets/appimage/dog.png"></div>
+    </div>
+    <br>
+    <br>
+  </div>
+<br>
+<br>
+<br>
+</div>
+</div>

@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ImagesliderComponent } from './imageslider/imageslider.component';
+import { SelectstateComponent } from './selectstate/selectstate.component';
+import { VersioncheckComponent } from './versioncheck/versioncheck.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path : '',
+    component : VersioncheckComponent
   },
   {
     path : 'Slider',
     component : ImagesliderComponent
   },
+   {
+    path : 'state',
+    component : SelectstateComponent
+  },
+
   {
     path: '',
     redirectTo: '',

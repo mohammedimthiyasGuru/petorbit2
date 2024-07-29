@@ -1,0 +1,62 @@
+ion-content {
+    --background: #086e6938;
+    
+  }
+  
+  ion-item {
+    --background: #ffffff;
+    border-radius: 8px;
+    margin: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  
+  ion-note {
+    font-size: 14px;
+    color: #8c8c8c;
+  }
+  
+.box {
+    background: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    width: calc(100% - 10px);
+}
+
+.larger-shadow {
+	box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.1)
+}
+
+.larger-shadow:hover {
+    transform: translateY(-3px); /* Lift the card slightly on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
+  }
+
+.notification_text {
+    font-size: 10px;
+    color: darkgray;
+
+}
+
+.notification_title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.notification_time {
+    font-size: 10px;color: lightgray;
+}
+
+.lable {
+    color: #ffffff !important; 
+}
+
+.scrollable-div {
+    overflow-y: auto;
+    height: 100vh;
+  }

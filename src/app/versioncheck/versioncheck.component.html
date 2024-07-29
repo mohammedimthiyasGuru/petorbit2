@@ -1,3 +1,26 @@
-<p>
-  versioncheck works!
-</p>
+
+
+  
+  <ion-content *ngIf="!loading_status">
+    <div class="centered-gif">
+      <img src="../assets/appimage/loading.gif" alt="Loading" />
+    </div>
+  </ion-content>
+
+
+
+
+
+
+  <ion-content *ngIf="loading_status">
+    <div class="update-container">
+      <img src="../../assets/appimage/rocket.png" alt="Rocket" class="rocket-image" />
+      <div class="text-container">
+      <div class="label1">New update is available</div> <br>
+      <div class="label3">The current version of this application is no longer supported. We apologize for any inconvenience we may have caused you.</div> <br>
+      <ion-button expand="block" color="primary"  (click)="openPlayStore()">Update now</ion-button>
+      <ion-button expand="block" fill="clear" color="medium"  (click)="skip()">No, Thanks! Close the app</ion-button>
+      </div>
+    </div>
+
+  </ion-content>

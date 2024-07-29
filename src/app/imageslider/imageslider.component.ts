@@ -19,8 +19,8 @@ export class ImagesliderComponent  implements OnInit {
   ngOnInit() {}
 
  async startApp() {
-    await this.storage.set('login_status',true);
-    this.router.navigateByUrl('', { replaceUrl: true });
+    await this.storage.set_store('login_status',true);
+    this.router.navigateByUrl('/state', { replaceUrl: true });
   }
 
 }

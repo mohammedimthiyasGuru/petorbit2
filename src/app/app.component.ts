@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { StatusBar, Style } from '@capacitor/status-bar';
-
 import {UtilityService} from './utility.service'
+
+import { Keyboard } from '@capacitor/keyboard';
+
+
+import { FcmService } from './fcm.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -12,29 +17,31 @@ import {UtilityService} from './utility.service'
 })
 export class AppComponent {
    
-   loading_status = true;
+   
 
 
-  constructor(private platform: Platform,public router: Router,private storage: UtilityService ) {
+  constructor(private platform: Platform,public router: Router,private storage: UtilityService,private fcmService: FcmService) {
     this.initializeApp();
-  }
+    this.fcmService.init();
 
-  async initializeApp() {
-    let login_status = await this.storage.get('login_status');
-    console.log(login_status);
-    setTimeout(async () => {
-      this.loading_status = false;
-      if(login_status){
-        this.router.navigateByUrl('');
-      } else {
-        await this.storage.set('login_status',true);
-        this.router.navigateByUrl('/Slider');
-      }
-    }, 3000);
-
-  
 
   }
+
+  async initializeApp() { 
+    this.platform.ready().then(() => {
+      Keyboard.addListener('keyboardWillShow', (info) => {
+        console.log('Keyboard will show with height:', info.keyboardHeight);
+        // Implement logic to adjust the scroll position or view
+      });
+      Keyboard.addListener('keyboardWillHide', () => {
+        console.log('Keyboard will hide');
+        // Implement logic to reset the scroll position or view
+      });
+    });
+  }
+
+
+
 
 
 

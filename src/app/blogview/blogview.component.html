@@ -1,3 +1,36 @@
-<p>
-  blogview works!
-</p>
+<div class="swipe-container" (swipeleft)="onSwipe($event)" (swiperight)="onSwipe($event)">
+  <div class="scrollable-div" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+    <div *ngFor="let item of items;let i = index" class="card">
+      <img [src]="item.imgSrc" alt="{{ item.title }}">
+      <div class="card-content" [ngClass]="getCardClass(i)">
+        <h3>{{ item.title }}</h3>
+        <div class="meta">
+          <span class="rating">{{ item.rating }}</span>
+          <span>{{ item.time }}</span>
+          <span>{{ item.views }}</span>
+        </div>
+        <div class="author">
+          <img [src]="item.authorImgSrc" alt="{{ item.authorName }}">
+          <div class="author-info">
+            <strong>{{ item.authorName }}</strong>
+          </div>
+          <div class="heart">
+            <img style="border-radius: 0px;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;" src="../../assets/appimage/share.png">
+          </div>
+        </div>
+        <div class="cropped-paragraph" *ngIf="!item.visible">
+          {{ item.description }}
+        </div>
+        <div class="description" *ngIf="item.visible">
+          {{ item.description }}
+       </div>
+       <button class="expand-button" (click)="expandCard(i)">{{isExpanded}}</button>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

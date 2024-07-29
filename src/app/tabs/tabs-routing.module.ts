@@ -1,22 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { BloghomeComponent } from '../bloghome/bloghome.component';
+import { NotificaitonlistComponent } from '../notificaitonlist/notificaitonlist.component';
+import { BlogviewComponent } from '../blogview/blogview.component';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
+        path: 'blog',
+        component : BloghomeComponent
+      },
+      {
+        path: 'blog/view',
+        component : BlogviewComponent
+      },
+      {
+        path: 'notification',
+        component : NotificaitonlistComponent
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/home/blog',
     pathMatch: 'full'
   }
 ];
